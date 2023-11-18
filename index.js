@@ -3,6 +3,8 @@ const cors = require("cors");
 require("./DB/Config");
 const Question = require("./DB/Question");
 const app = express();
+const  dotenv = require( 'dotenv');
+dotenv.config();
 
 app.use(express.json());
 app.use(cors());
@@ -26,3 +28,6 @@ app.get("/questions", async (req, res) => {
 const http = require("http");
 const server = http.createServer(app);
 server.listen(process.env.PORT||5000);
+
+
+
